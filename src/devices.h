@@ -72,6 +72,7 @@
 #include "devices/BPARASITE_json.h"
 #include "devices/BM2_json.h"
 #include "devices/ServiceData_json.h"
+#include "devices/SENSUS_191_json.h"
 
 const char* _devices[][2] = {
     {_HHCCJCY01HHCC_json, _HHCCJCY01HHCC_json_props},
@@ -128,4 +129,5 @@ const char* _devices[][2] = {
     {_T301_json, _T301_json_props},
     {_ibeacon_json, _ibeacon_json_props},
     {_ServiceData_json, _ServiceData_json_props},
+    {_SENSUS_191_json, _SENSUS_191_json_props},
 };
