@@ -1,6 +1,6 @@
 # Sensus191 Personal Environmental Moonitoring Station
 
-|Model Id|[SENSUS_191](https://github.com/theengs/decoder/blob/development/src/devices/Sensus191_json.h)|
+|Model Id|[SENSUS_191](https://github.com/Algol655/decoder/blob/development/src/devices/Sensus191_json.h)|
 |-|-|
 |Brand|ALGOL|
 |Model|Personal Environmental Moonitoring Station|
