@@ -90,8 +90,8 @@ module.exports = {
             'devices/LYWSD03MMC_PVVX',
             'devices/LYWSDCGQ',
             'devices/Miband',
-            'devices/MUE4094RT',
-            'devices/SENSUS_191'
+            'devices/SENSUS_191',
+            'devices/MUE4094RT'
           ]
         },
         {
