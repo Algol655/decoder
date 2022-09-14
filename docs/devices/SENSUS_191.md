@@ -8,5 +8,5 @@
 |Communication|BLE broadcast|
 |Frequency|2.4Ghz|
 |Power source|Rechargeable battery, USB|
-|Exchanged data|temperature1, temperature2, temperature3, humidity, pressure1, pressure2|
+|Exchanged data|temperature1, temperature2, temperature3, humidity, pressure1, pressure2, forecast|
 |Encrypted|No|

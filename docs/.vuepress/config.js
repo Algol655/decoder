@@ -37,6 +37,7 @@ module.exports = {
           children: [
             'devices/ABN03',
             'devices/ABTemp',
+            'devices/SENSUS_191',
             'devices/Amazfit',
             'devices/Amphiro',
             'devices/BM_V23',
@@ -90,7 +91,6 @@ module.exports = {
             'devices/LYWSD03MMC_PVVX',
             'devices/LYWSDCGQ',
             'devices/Miband',
-            'devices/SENSUS_191',
             'devices/MUE4094RT'
           ]
         },

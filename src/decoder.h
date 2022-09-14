@@ -100,7 +100,10 @@ public:
     T301,
     IBEACON,
     SERVICE_DATA,
-    SENSUS_191,
+    SENSUS_191_1,
+    SENSUS_191_2,
+    SENSUS_191_3,
+    SENSUS_191_4,
     BLE_ID_MAX
   };
 
