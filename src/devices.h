@@ -76,6 +76,7 @@
 #include "devices/SENSUS_191_2_json.h"
 #include "devices/SENSUS_191_3_json.h"
 #include "devices/SENSUS_191_4_json.h"
+#include "devices/SENSUS_191_5_json.h"
 
 const char* _devices[][2] = {
     {_HHCCJCY01HHCC_json, _HHCCJCY01HHCC_json_props},
@@ -136,4 +137,5 @@ const char* _devices[][2] = {
     {_SENSUS_191_2_json, _SENSUS_191_2_json_props},
     {_SENSUS_191_3_json, _SENSUS_191_3_json_props},
     {_SENSUS_191_4_json, _SENSUS_191_4_json_props},
+    {_SENSUS_191_5_json, _SENSUS_191_5_json_props},
 };
