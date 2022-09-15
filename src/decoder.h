@@ -101,6 +101,10 @@ public:
     IBEACON,
     SERVICE_DATA,
     SENSUS_191_1,
+    SENSUS_191_2,
+    SENSUS_191_3,
+    SENSUS_191_4,
+    SENSUS_191_5,
     BLE_ID_MAX
   };
 
