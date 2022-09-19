@@ -239,7 +239,7 @@ const char* _SENSUS_191_3_json = "{\"brand\":\"ALGOL\",\"model\":\"PEMS\",\"mode
    }
 })""""*/
 
-const char* _SENSUS_191_3_json_props = "{\"properties\":{\"tvoc_1h_avg\":{\"unit\":\"ppb\",\"name\":\"volatile_organic_compounds_avg\"},\"co2_8h_avg\":{\"unit\":\"ppm\",\"name\":\"carbon_dioxide_avg\"},\"co_8h_avg\":{\"unit\":\"mg/m³\",\"name\":\"carbon_monoxide_avg\"},\"no2_1h_avg\":{\"unit\":\"µg/m³\",\"name\":\"nitrogen_dioxide_avg\"},\"nh3_8h_avg\":{\"unit\":\"µg/m³\",\"name\":\"ammonia_avg\"},\"ch2o_8h_avg\":{\"unit\":\"µg/m³\",\"name\":\"formaldehyde_avg\"},\"o3_8h_avg\":{\"unit\":\"µg/m³\",\"name\":\"ozone_avg\"},\"so2_1h_avg\":{\"unit\":\"µg/m³\",\"name\":\"sulphur_dioxide_avg\"},\"c6h6_24h_avg\":{\"unit\":\"µg/m³\",\"name\":\"benzene_avg\"},\"gases_avg_aqi\":{\"unit\":\"\",\"name\":\"aqi_avg\"}}}";
+const char* _SENSUS_191_3_json_props = "{\"properties\":{\"tvoc_1h_avg\":{\"unit\":\"ppb\",\"name\":\"volatile_organic_compounds_avg\"},\"co2_8h_avg\":{\"unit\":\"ppm\",\"name\":\"carbon_dioxide_avg\"},\"co_8h_avg\":{\"unit\":\"mg/m³\",\"name\":\"carbon_monoxide_avg\"},\"no2_1h_avg\":{\"unit\":\"µg/m³\",\"name\":\"nitrogen_dioxide_avg\"},\"nh3_8h_avg\":{\"unit\":\"µg/m³\",\"name\":\"ammonia_avg\"},\"ch2o_8h_avg\":{\"unit\":\"µg/m³\",\"name\":\"formaldehyde_avg\"},\"o3_8h_avg\":{\"unit\":\"µg/m³\",\"name\":\"ozone_avg\"},\"so2_1h_avg\":{\"unit\":\"µg/m³\",\"name\":\"sulphur_dioxide_avg\"},\"c6h6_24h_avg\":{\"unit\":\"µg/m³\",\"name\":\"benzene_avg\"},\"gases_avg_aqi\":{\"unit\":\"\",\"name\":\"aqi_gas_avg\"}}}";
 /*R""""(
 {
    "properties":{
@@ -281,7 +281,7 @@ const char* _SENSUS_191_3_json_props = "{\"properties\":{\"tvoc_1h_avg\":{\"unit
       },
       "gases_avg_aqi":{
          "unit":"",
-         "name":"aqi_avg"
+         "name":"aqi_gas_avg"
       }
    }
 })"""";*/
@@ -345,7 +345,7 @@ const char* _SENSUS_191_4_json = "{\"brand\":\"ALGOL\",\"model\":\"PEMS\",\"mode
    }
 })""""*/
 
-const char* _SENSUS_191_4_json_props = "{\"properties\":{\"pm1_0\":{\"unit\":\"µg/m³\",\"name\":\"pm1\"},\"pm2_5\":{\"unit\":\"µg/m³\",\"name\":\"pm25\"},\"pm4_0\":{\"unit\":\"µg/m³\",\"name\":\"pm40\"},\"pm10\":{\"unit\":\"µg/m³\",\"name\":\"pm10\"},\"np_05\":{\"unit\":\"\",\"name\":\"pm05\"},\"pm1_0_24h_avg\":{\"unit\":\"µg/m³\",\"name\":\"pm1_avg\"},\"pm2_5_24h_avg\":{\"unit\":\"µg/m³\",\"name\":\"pm25_avg\"},\"pm4_0_24h_avg\":{\"unit\":\"µg/m³\",\"name\":\"pm40_avg\"},\"pm10_24h_avg\":{\"unit\":\"µg/m³\",\"name\":\"pm10_avg\"},\"pmx_aqi\":{\"unit\":\"\",\"name\":\"aqi\"},\"avg_pmx_aqi\":{\"unit\":\"\",\"name\":\"aqi_avg\"}}}";
+const char* _SENSUS_191_4_json_props = "{\"properties\":{\"pm1_0\":{\"unit\":\"µg/m³\",\"name\":\"pm1\"},\"pm2_5\":{\"unit\":\"µg/m³\",\"name\":\"pm25\"},\"pm4_0\":{\"unit\":\"µg/m³\",\"name\":\"pm40\"},\"pm10\":{\"unit\":\"µg/m³\",\"name\":\"pm10\"},\"np_05\":{\"unit\":\"\",\"name\":\"pm05\"},\"pm1_0_24h_avg\":{\"unit\":\"µg/m³\",\"name\":\"pm1_avg\"},\"pm2_5_24h_avg\":{\"unit\":\"µg/m³\",\"name\":\"pm25_avg\"},\"pm4_0_24h_avg\":{\"unit\":\"µg/m³\",\"name\":\"pm40_avg\"},\"pm10_24h_avg\":{\"unit\":\"µg/m³\",\"name\":\"pm10_avg\"},\"pmx_aqi\":{\"unit\":\"\",\"name\":\"aqi_pmx\"},\"avg_pmx_aqi\":{\"unit\":\"\",\"name\":\"aqi_pmx_avg\"}}}";
 /*R""""(
 {
    "properties":{
@@ -387,11 +387,11 @@ const char* _SENSUS_191_4_json_props = "{\"properties\":{\"pm1_0\":{\"unit\":\"�
       },
       "pmx_aqi":{
          "unit":"",
-         "name":"aqi"
+         "name":"aqi_pmx"
       },
       "avg_pmx_aqi":{
          "unit":"",
-         "name":"aqi_avg"
+         "name":"aqi_pmx_avg"
       }
    }
 })"""";*/
