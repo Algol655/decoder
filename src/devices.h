@@ -29,8 +29,9 @@
 #include "devices/GAEN_json.h"
 #include "devices/H5055_json.h"
 #include "devices/H5072_json.h"
-#include "devices/H5075_json.h"
+#include "devices/H5074_json.h"
 #include "devices/H5102_json.h"
+#include "devices/H5106_json.h"
 #include "devices/HHCCJCY01HHCC_json.h"
 #include "devices/HHCCPOT002_json.h"
 #include "devices/IBS_TH1_json.h"
@@ -40,8 +41,7 @@
 #include "devices/IBT_6XS_SOLIS6_json.h"
 #include "devices/JQJCY01YM_json.h"
 #include "devices/LYWSD02_json.h"
-#include "devices/LYWSD03MMC_ATC_json.h"
-#include "devices/LYWSD03MMC_PVVX_json.h"
+#include "devices/LYWSD03MMC_json.h"
 #include "devices/LYWSDCGQ_json.h"
 #include "devices/MBXPRO_json.h"
 #include "devices/MS_CDP_json.h"
@@ -56,6 +56,8 @@
 #include "devices/SBMS_json.h"
 #include "devices/SBMT_json.h"
 #include "devices/SBS1_json.h"
+#include "devices/SHT4X_json.h"
+#include "devices/SCD4X_json.h"
 #include "devices/SmartDry_json.h"
 #include "devices/TPMS_json.h"
 #include "devices/ThermoBeacon_json.h"
@@ -64,12 +66,17 @@
 #include "devices/ABN03_json.h"
 #include "devices/ABTemp_json.h"
 #include "devices/Amphiro_json.h"
-#include "devices/TP357_8_json.h"
+#include "devices/TPTH_json.h"
+#include "devices/Mopeka_json.h"
+#include "devices/T201_json.h"
 #include "devices/T301_json.h"
 #include "devices/iBeacon_json.h"
 #include "devices/iNodeEM_json.h"
-#include "devices/BM_V23_json.h"
+#include "devices/BM1IN1_json.h"
+#include "devices/BM3IN1_json.h"
+#include "devices/BM4IN1_json.h"
 #include "devices/BPARASITE_json.h"
+#include "devices/BWBSDOO_json.h"
 #include "devices/BM2_json.h"
 #include "devices/ServiceData_json.h"
 #include "devices/SENSUS_191_json.h"
@@ -79,8 +86,10 @@ const char* _devices[][2] = {
     {_LYWSD02_json, _LYWSD02_json_props},
     {_LYWSDCGQ_json, _LYWSDCGQ_json_props},
     {_CGP1W_json, _CGP1W_json_props},
-    {_CGG1_json_v1, _CGG1_json_props},
-    {_CGG1_json_v2, _CGG1_json_props},
+    {_CGG1_json_STOCK, _CGG1_json_props},
+    {_CGG1_json_ATC1441, _CGG1_json_props},
+    {_CGG1_json_PVVX, _CGG1_json_props},
+    {_CGG1_json_STOCK_2, _CGG1_json_props},
     {_CGDN1_json, _CGDN1_json_props},
     {_CGD1_json, _CGD1_json_props},
     {_CGDK2_json, _CGDK2_json_props},
@@ -94,14 +103,15 @@ const char* _devices[][2] = {
     {_XMTZC04HM_json, _XMTZC04HM_json_props},
     {_XMTZC05HM_json, _XMTZC05HM_json_props},
     {_TPMS_json, _TPMS_json_props},
-    {_LYWSD03MMC_ATC_json, _LYWSD03MMC_ATC_props},
+    {_LYWSD03MMC_json_ATC, _LYWSD03MMC_json_props},
+    {_LYWSD03MMC_json_PVVX, _LYWSD03MMC_json_props},
     {_CGPR1_json, _CGPR1_json_props},
     {_ThermoBeacon_json, _ThermoBeacon_json_props},
     {_H5055_json, _H5055_json_props},
-    {_H5075_json, _H5075_json_props},
     {_H5072_json, _H5072_json_props},
+    {_H5074_json, _H5074_json_props},
     {_H5102_json, _H5102_json_props},
-    {_LYWSD03MMC_PVVX_json, _LYWSD03MMC_PVVX_props},
+    {_H5106_json, _H5106_json_props},
     {_MUE4094RT_json, _MUE4094RT_json_props},
     {_Mokobeacon_json, _Mokobeacon_json_props},
     {_MBXPRO_json, _MBXPRO_json_props},
@@ -114,18 +124,25 @@ const char* _devices[][2] = {
     {_SBMS_json, _SBMS_json_props},
     {_SBMT_json, _SBMT_json_props},
     {_SBS1_json, _SBS1_json_props},
+    {_SHT4X_json, _SHT4X_json_props},
+    {_SCD4X_json, _SCD4X_json_props},
     {_SmartDry_json, _SmartDry_json_props},
-    {_BM_V23_json, _BM_V23_json_props},
+    {_BM1IN1_json, _BM1IN1_json_props},
+    {_BM3IN1_json, _BM3IN1_json_props},
+    {_BM4IN1_json, _BM4IN1_json_props},
     {_MS_CDP_json, _MS_CDP_json_props},
     {_GAEN_json, _GAEN_json_props},
     {_HHCCPOT002_json, _HHCCPOT002_json_props},
     {_BPARASITE_json, _BPARASITE_json_props},
+    {_BWBSDOO_json, _BWBSDOO_json_props},
     {_BM2_json, _BM2_json_props},
     {_RDL52832_json, _RDL52832_json_props},
     {_ABN03_json, _ABN03_json_props},
     {_ABTemp_json, _ABTemp_json_props},
     {_AMPHIRO_json, _AMPHIRO_json_props},
-    {_TP357_json, _TP357_json_props},
+    {_TPTH_json, _TPTH_json_props},
+    {_Mopeka_json, _Mopeka_json_props},
+    {_T201_json, _T201_json_props},
     {_T301_json, _T301_json_props},
     {_ibeacon_json, _ibeacon_json_props},
     {_ServiceData_json, _ServiceData_json_props},

@@ -399,7 +399,7 @@ const char* _SENSUS_191_4_json_props = "{\"properties\":{\"pm1_0\":{\"unit\":\"Â
 /*************************************************************
  ******               Status Report page                ******
  ************************************************************/
-const char* _SENSUS_191_5_json = "{\"brand\":\"ALGOL\",\"model\":\"PEMS\",\"model_id\":\"Sensus191\",\"cidc\":false,\"condition\":[\"manufacturerdata\",\"=\",52,\"index\",0,\"ffff55\",\"&\",\"manufacturerdata\",\"index\",50,\"80\"],\"properties\":{\"sensor_status_reg\":{\"decoder\":[\"string_from_hex_data\",\"manufacturerdata\",6,8,true,false]},\"anlg_ovfl_status_reg\":{\"decoder\":[\"string_from_hex_data\",\"manufacturerdata\",14,8,true,false]}}}";
+const char* _SENSUS_191_5_json = "{\"brand\":\"ALGOL\",\"model\":\"PEMS\",\"model_id\":\"Sensus191\",\"cidc\":false,\"condition\":[\"manufacturerdata\",\"=\",52,\"index\",0,\"ffff55\",\"&\",\"manufacturerdata\",\"index\",50,\"80\"],\"properties\":{\"sensor_status_reg\":{\"decoder\":[\"string_from_hex_data\",\"manufacturerdata\",6,8,true,false]},\"local_time\":{\"decoder\":[\"string_from_hex_data\",\"manufacturerdata\",14,8,true,false]},\"sys_status_reg\":{\"decoder\":[\"string_from_hex_data\",\"manufacturerdata\",22,8,true,false]}}}";
 /*R""""(
 {
    "brand":"ALGOL",
@@ -411,13 +411,16 @@ const char* _SENSUS_191_5_json = "{\"brand\":\"ALGOL\",\"model\":\"PEMS\",\"mode
       "sensor_status_reg":{
          "decoder":["string_from_hex_data", "manufacturerdata", 6, 8, true, false]
       },
-      "anlg_ovfl_status_reg":{
+      "local_time":{
          "decoder":["string_from_hex_data", "manufacturerdata", 14, 8, true, false]
+      },
+      "sys_status_reg":{
+         "decoder":["string_from_hex_data", "manufacturerdata", 22, 8, true, false]
       }
    }
 })""""*/
 
-const char* _SENSUS_191_5_json_props = "{\"properties\":{\"sensor_status_reg\":{\"unit\":\"\",\"name\":\"status_reg\"},\"anlg_ovfl_status_reg\":{\"unit\":\"\",\"name\":\"an_ovfl_reg\"}}}";
+const char* _SENSUS_191_5_json_props = "{\"properties\":{\"sensor_status_reg\":{\"unit\":\"\",\"name\":\"status_reg\"},\"local_time\":{\"unit\":\"\",\"name\":\"local_time\"},\"sys_status_reg\":{\"unit\":\"\",\"name\":\"sys_reg\"}}}";
 /*R""""(
 {
    "properties":{
@@ -425,9 +428,13 @@ const char* _SENSUS_191_5_json_props = "{\"properties\":{\"sensor_status_reg\":{
          "unit":"",
          "name":"status_reg"
       },
-      "anlg_ovfl_status_reg":{
+      "local_time":{
          "unit":"",
-         "name":"an_ovfl_reg"
+         "name":"local_time"
+      },
+      "sys_status_reg":{
+         "unit":"",
+         "name":"sys_reg"
       }
    }
 })"""";*/
