@@ -454,3 +454,79 @@ const char* _SENSUS_191_5_json_props = "{\"properties\":{\"sensor_status_reg\":{
       }
    }
 })"""";*/
+
+/*************************************************************
+ ******    Environmental page: Daily Min-MAx values     ******
+ ************************************************************/
+const char* _SENSUS_191_6_json = "{\"brand\":\"ALGOL\",\"model\":\"PEMS\",\"model_id\":\"Sensus191\",\"cidc\":false,\"condition\":[\"manufacturerdata\",\"=\",52,\"index\",0,\"ffff55\",\"&\",\"manufacturerdata\",\"index\",50,\"81\"],\"properties\":{\"temp_min\":{\"condition\":[\"manufacturerdata\",6,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",6,4,true,true],\"post_proc\":[\"/\",10]},\"pres_min\":{\"condition\":[\"manufacturerdata\",10,\"!\",\"ffffffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",10,8,true,false],\"post_proc\":[\"/\",100]},\"hum_min\":{\"condition\":[\"manufacturerdata\",18,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",18,4,true,false],\"post_proc\":[\"/\",10]},\"hum_max\":{\"condition\":[\"manufacturerdata\",22,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",22,4,true,true],\"post_proc\":[\"/\",10]},\"temp_max\":{\"condition\":[\"manufacturerdata\",26,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",26,4,true,true],\"post_proc\":[\"/\",10]},\"pres_max\":{\"condition\":[\"manufacturerdata\",30,\"!\",\"ffffffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",30,8,true,false],\"post_proc\":[\"/\",100]}}}";
+/*R""""(
+{
+   "brand":"ALGOL",
+   "model":"PEMS",
+   "model_id":"Sensus191",
+   "cidc":false,
+   "condition":["manufacturerdata", "=" ,52 ,"index", 0, "ffff55", "&", "manufacturerdata", "index", 50, "81"],
+   "properties":{
+      "temp_min":{
+         "condition":["manufacturerdata", 6, "!", "ffff"],
+         "decoder":["value_from_hex_data", "manufacturerdata", 6, 4, true, true],
+         "post_proc":["/", 10]
+      },
+      "pres_min":{
+         "condition":["manufacturerdata", 10, "!", "ffffffff"],
+         "decoder":["value_from_hex_data", "manufacturerdata", 10, 8, true, false],
+         "post_proc":["/", 100]
+      },
+      "hum_min":{
+         "condition":["manufacturerdata", 18, "!", "ffff"],
+         "decoder":["value_from_hex_data", "manufacturerdata", 18, 4, true, false],
+         "post_proc":["/", 10]
+      },
+      "hum_max":{
+         "condition":["manufacturerdata", 22, "!", "ffff"],
+         "decoder":["value_from_hex_data", "manufacturerdata", 22, 4, true, true],
+         "post_proc":["/", 10]
+      },
+      "temp_max":{
+         "condition":["manufacturerdata", 26, "!", "ffff"],
+         "decoder":["value_from_hex_data", "manufacturerdata", 26, 4, true, true],
+         "post_proc":["/", 10]
+      },
+      "pres_max":{
+         "condition":["manufacturerdata", 30, "!", "ffffffff"],
+         "decoder":["value_from_hex_data", "manufacturerdata", 30, 8, true, false],
+         "post_proc":["/", 100]
+      }
+   }
+})""""*/
+
+const char* _SENSUS_191_6_json_props = "{\"properties\":{\"temp_min\":{\"unit\":\"°C\",\"name\":\"daily_min_temp\"},\"pres_min\":{\"unit\":\"hPa\",\"name\":\"daily_mim_pres_abs\"},\"hum_min\":{\"unit\":\"%\",\"name\":\"daily_min_hum\"},\"hum_max\":{\"unit\":\"%\",\"name\":\"daily_max_hum\"},\"temp_max\":{\"unit\":\"°C\",\"name\":\"daily_max_temp\"},\"pres_max\":{\"unit\":\"hPa\",\"name\":\"daily_max_pres_abs\"}}}";
+/*R""""(
+{
+   "properties":{
+      "temp_min":{
+         "unit":"°C",
+         "name":"daily_min_temp"
+      },
+      "pres_min":{
+         "unit":"hPa",
+         "name":"daily_mim_pres_abs"
+      },
+      "hum_min":{
+         "unit":"%",
+         "name":"daily_min_hum"
+      },
+      "hum_max":{
+         "unit":"%",
+         "name":"daily_max_hum"
+      },
+      "temp_max":{
+         "unit":"°C",
+         "name":"daily_max_temp"
+      },
+      "pres_max":{
+         "unit":"hPa",
+         "name":"daily_max_pres_abs"
+      }
+   }
+})"""";*/

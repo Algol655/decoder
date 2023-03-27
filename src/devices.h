@@ -151,4 +151,5 @@ const char* _devices[][2] = {
     {_SENSUS_191_3_json, _SENSUS_191_3_json_props},
     {_SENSUS_191_4_json, _SENSUS_191_4_json_props},
     {_SENSUS_191_5_json, _SENSUS_191_5_json_props},
+    {_SENSUS_191_6_json, _SENSUS_191_6_json_props},
 };
