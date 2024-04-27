@@ -1,7 +1,7 @@
 /*************************************************************
  ******                 Environmental page              ******
  ************************************************************/
-const char* _SENSUS_191_1_json = "{\"brand\":\"ALGOL\",\"model\":\"PEMS\",\"model_id\":\"Sensus191\",\"cidc\":false,\"condition\":[\"manufacturerdata\",\"=\",52,\"index\",0,\"ffff55\",\"&\",\"manufacturerdata\",\"index\",50,\"01\"],\"properties\":{\"tempc\":{\"condition\":[\"manufacturerdata\",6,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",6,4,true,true],\"post_proc\":[\"/\",10]},\"pres\":{\"condition\":[\"manufacturerdata\",10,\"!\",\"ffffffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",10,8,true,false],\"post_proc\":[\"/\",100]},\"hum\":{\"condition\":[\"manufacturerdata\",18,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",18,4,true,false],\"post_proc\":[\"/\",10]},\"tempc2_dp\":{\"condition\":[\"manufacturerdata\",22,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",22,4,true,true],\"post_proc\":[\"/\",10]},\"tempc3_hi\":{\"condition\":[\"manufacturerdata\",26,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",26,4,true,true],\"post_proc\":[\"/\",10]},\"pres_abs\":{\"condition\":[\"manufacturerdata\",30,\"!\",\"ffffffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",30,8,true,false],\"post_proc\":[\"/\",100]},\"forecast\":{\"condition\":[\"manufacturerdata\",38,\"!\",\"ff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",38,2,true,false]}}}";
+const char* _SENSUS_191_1_json = "{\"brand\":\"ALGOL\",\"model\":\"PEMS\",\"model_id\":\"Sensus191\",\"cidc\":false,\"condition\":[\"manufacturerdata\",\"=\",52,\"index\",0,\"ffff55\",\"&\",\"manufacturerdata\",\"index\",50,\"01\"],\"properties\":{\"tempc\":{\"condition\":[\"manufacturerdata\",6,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",6,4,true,true],\"post_proc\":[\"/\",10]},\"pres\":{\"condition\":[\"manufacturerdata\",10,\"!\",\"ffffffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",10,8,true,false],\"post_proc\":[\"/\",100]},\"hum\":{\"condition\":[\"manufacturerdata\",18,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",18,4,true,false],\"post_proc\":[\"/\",10]},\"tempc2_dp\":{\"condition\":[\"manufacturerdata\",22,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",22,4,true,true],\"post_proc\":[\"/\",10]},\"tempc3_hi\":{\"condition\":[\"manufacturerdata\",26,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",26,4,true,true],\"post_proc\":[\"/\",10]},\"pres_abs\":{\"condition\":[\"manufacturerdata\",30,\"!\",\"ffffffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",30,8,true,false],\"post_proc\":[\"/\",100]},\"forecast\":{\"condition\":[\"manufacturerdata\",38,\"!\",\"ff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",38,2,true,false]},\"uv_index\":{\"condition\":[\"manufacturerdata\",40,\"!\",\"ffffffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",40,8,true,false],\"post_proc\":[\"/\",1000]}}}";
 /*R""""(
 {
    "brand":"ALGOL",
@@ -43,11 +43,16 @@ const char* _SENSUS_191_1_json = "{\"brand\":\"ALGOL\",\"model\":\"PEMS\",\"mode
       "forecast":{
          "condition":["manufacturerdata", 38, "!", "ff"],
          "decoder":["value_from_hex_data", "manufacturerdata", 38, 2, true, false]
+      },
+      "uv_index":{
+         "condition":["manufacturerdata", 40, "!", "ffffffff"],
+         "decoder":["value_from_hex_data", "manufacturerdata", 40, 8, true, false],
+         "post_proc":["/", 1000]
       }
    }
 })""""*/
 
-const char* _SENSUS_191_1_json_props = "{\"properties\":{\"tempc\":{\"unit\":\"째C\",\"name\":\"temperature\"},\"pres\":{\"unit\":\"hPa\",\"name\":\"pressure_abs\"},\"hum\":{\"unit\":\"%\",\"name\":\"humidity\"},\"tempc2_dp\":{\"unit\":\"째C\",\"name\":\"temperature_dp\"},\"tempc3_hi\":{\"unit\":\"째C\",\"name\":\"temperature_hi\"},\"pres_abs\":{\"unit\":\"hPa\",\"name\":\"pressure\"},\"forecast\":{\"unit\":\"\",\"name\":\"weather_forecast\"}}}";
+const char* _SENSUS_191_1_json_props = "{\"properties\":{\"tempc\":{\"unit\":\"째C\",\"name\":\"temperature\"},\"pres\":{\"unit\":\"hPa\",\"name\":\"pressure_abs\"},\"hum\":{\"unit\":\"%\",\"name\":\"humidity\"},\"tempc2_dp\":{\"unit\":\"째C\",\"name\":\"temperature_dp\"},\"tempc3_hi\":{\"unit\":\"째C\",\"name\":\"temperature_hi\"},\"pres_abs\":{\"unit\":\"hPa\",\"name\":\"pressure\"},\"forecast\":{\"unit\":\"\",\"name\":\"weather_forecast\"},\"uv_index\":{\"unit\":\"\",\"name\":\"uv_index\"}}}";
 /*R""""(
 {
    "properties":{
@@ -78,6 +83,10 @@ const char* _SENSUS_191_1_json_props = "{\"properties\":{\"tempc\":{\"unit\":\"�
       "forecast":{
          "unit":"",
          "name":"weather_forecast"
+      },
+      "uv_index":{
+         "unit":"",
+         "name":"uv_index"
       }
    }
 })"""";*/
