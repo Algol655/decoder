@@ -118,6 +118,8 @@ public:
     SENSUS_191_6,
     SENSUS_191_7,
     SENSUS_191_8,
+    SENSUS_191_9,
+    SENSUS_191_10,
     BLE_ID_MAX
   };
 
