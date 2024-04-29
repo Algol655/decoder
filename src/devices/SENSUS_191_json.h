@@ -596,7 +596,7 @@ const char* _SENSUS_191_8_json = "{\"brand\":\"ALGOL\",\"model\":\"PEMS\",\"mode
    }
 })""""*/
 
-const char* _SENSUS_191_8_json_props = "{\"properties\":{\"lux_max\":{\"unit\":\"lx\",\"name\":\"daily_max_illuminance\"},\"uv_index\":{\"unit\":\"hPa\",\"name\":\"daily_max_uv_index\"}}}";
+const char* _SENSUS_191_8_json_props = "{\"properties\":{\"lux_max\":{\"unit\":\"lx\",\"name\":\"daily_max_illuminance\"},\"uv_index\":{\"unit\":\"\",\"name\":\"daily_max_uv_index\"}}}";
 /*R""""(
 {
    "properties":{
@@ -605,7 +605,7 @@ const char* _SENSUS_191_8_json_props = "{\"properties\":{\"lux_max\":{\"unit\":\
          "name":"daily_max_illuminance"
       },
       "uv_index":{
-         "unit":"hPa",
+         "unit":"",
          "name":"daily_max_uv_index"
       }
    }
