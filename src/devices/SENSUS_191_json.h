@@ -424,7 +424,7 @@ const char* _SENSUS_191_4_json_props = "{\"properties\":{\"pm1_0\":{\"unit\":\"�
 /*************************************************************
  ******            Extra Environmental page             ******
  ************************************************************/
-const char* _SENSUS_191_5_json = "{\"brand\":\"ALGOL\",\"model\":\"PEMS\",\"model_id\":\"Sensus191\",\"cidc\":false,\"condition\":[\"manufacturerdata\",\"=\",52,\"index\",0,\"ffff55\",\"&\",\"manufacturerdata\",\"index\",50,\"05\"],\"properties\":{\"lux\":{\"condition\":[\"manufacturerdata\",6,\"!\",\"ffffffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",6,8,true,false],\"post_proc\":[\"/\",1000]}}}";
+const char* _SENSUS_191_5_json = "{\"brand\":\"ALGOL\",\"model\":\"PEMS\",\"model_id\":\"Sensus191\",\"cidc\":false,\"condition\":[\"manufacturerdata\",\"=\",52,\"index\",0,\"ffff55\",\"&\",\"manufacturerdata\",\"index\",50,\"05\"],\"properties\":{\"lux\":{\"condition\":[\"manufacturerdata\",6,\"!\",\"ffffffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",6,8,true,false],\"post_proc\":[\"/\",1000]},\"hum_abs\":{\"condition\":[\"manufacturerdata\",14,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",14,4,true,false],\"post_proc\":[\"/\",10]}}}";
 /*R""""(
 {
    "brand":"ALGOL",
@@ -437,17 +437,26 @@ const char* _SENSUS_191_5_json = "{\"brand\":\"ALGOL\",\"model\":\"PEMS\",\"mode
          "condition":["manufacturerdata", 6, "!", "ffffffff"],
          "decoder":["value_from_hex_data", "manufacturerdata", 6, 8, true, false],
          "post_proc":["/", 1000]
+      },
+      "hum_abs":{
+         "condition":["manufacturerdata", 14, "!", "ffff"],
+         "decoder":["value_from_hex_data", "manufacturerdata", 14, 4, true, false],
+         "post_proc":["/", 10]
       }
    }
 })""""*/
 
-const char* _SENSUS_191_5_json_props = "{\"properties\":{\"lux\":{\"unit\":\"lx\",\"name\":\"illuminance\"}}}";
+const char* _SENSUS_191_5_json_props = "{\"properties\":{\"lux\":{\"unit\":\"lx\",\"name\":\"illuminance\"},\"hum_abs\":{\"unit\":\"g/m³\",\"name\":\"humidity_abs\"}}}";
 /*R""""(
 {
    "properties":{
       "lux":{
          "unit":"lx",
          "name":"illuminance"
+      },
+      "hum_abs":{
+         "unit":"g/m³",
+         "name":"humidity_abs"
       }
    }
 })"""";*/
@@ -498,7 +507,7 @@ const char* _SENSUS_191_6_json_props = "{\"properties\":{\"sensor_status_reg\":{
 /*************************************************************
  ******    Environmental page: Daily Min-MAx values     ******
  ************************************************************/
-const char* _SENSUS_191_7_json = "{\"brand\":\"ALGOL\",\"model\":\"PEMS\",\"model_id\":\"Sensus191\",\"cidc\":false,\"condition\":[\"manufacturerdata\",\"=\",52,\"index\",0,\"ffff55\",\"&\",\"manufacturerdata\",\"index\",50,\"81\"],\"properties\":{\"temp_min\":{\"condition\":[\"manufacturerdata\",6,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",6,4,true,true],\"post_proc\":[\"/\",10]},\"pres_min\":{\"condition\":[\"manufacturerdata\",10,\"!\",\"ffffffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",10,8,true,false],\"post_proc\":[\"/\",100]},\"hum_min\":{\"condition\":[\"manufacturerdata\",18,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",18,4,true,false],\"post_proc\":[\"/\",10]},\"hum_max\":{\"condition\":[\"manufacturerdata\",22,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",22,4,true,true],\"post_proc\":[\"/\",10]},\"temp_max\":{\"condition\":[\"manufacturerdata\",26,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",26,4,true,true],\"post_proc\":[\"/\",10]},\"pres_max\":{\"condition\":[\"manufacturerdata\",30,\"!\",\"ffffffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",30,8,true,false],\"post_proc\":[\"/\",100]}}}";
+const char* _SENSUS_191_7_json = "{\"brand\":\"ALGOL\",\"model\":\"PEMS\",\"model_id\":\"Sensus191\",\"cidc\":false,\"condition\":[\"manufacturerdata\",\"=\",52,\"index\",0,\"ffff55\",\"&\",\"manufacturerdata\",\"index\",50,\"81\"],\"properties\":{\"temp_min\":{\"condition\":[\"manufacturerdata\",6,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",6,4,true,true],\"post_proc\":[\"/\",10]},\"pres_min\":{\"condition\":[\"manufacturerdata\",10,\"!\",\"ffffffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",10,8,true,false],\"post_proc\":[\"/\",100]},\"hum_min\":{\"condition\":[\"manufacturerdata\",18,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",18,4,true,false],\"post_proc\":[\"/\",10]},\"hum_max\":{\"condition\":[\"manufacturerdata\",22,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",22,4,true,false],\"post_proc\":[\"/\",10]},\"temp_max\":{\"condition\":[\"manufacturerdata\",26,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",26,4,true,true],\"post_proc\":[\"/\",10]},\"pres_max\":{\"condition\":[\"manufacturerdata\",30,\"!\",\"ffffffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",30,8,true,false],\"post_proc\":[\"/\",100]},\"hum_abs_min\":{\"condition\":[\"manufacturerdata\",38,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",38,4,true,false],\"post_proc\":[\"/\",10]},\"hum_abs_max\":{\"condition\":[\"manufacturerdata\",42,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",42,4,true,false],\"post_proc\":[\"/\",10]}}}";
 /*R""""(
 {
    "brand":"ALGOL",
@@ -524,7 +533,7 @@ const char* _SENSUS_191_7_json = "{\"brand\":\"ALGOL\",\"model\":\"PEMS\",\"mode
       },
       "hum_max":{
          "condition":["manufacturerdata", 22, "!", "ffff"],
-         "decoder":["value_from_hex_data", "manufacturerdata", 22, 4, true, true],
+         "decoder":["value_from_hex_data", "manufacturerdata", 22, 4, true, false],
          "post_proc":["/", 10]
       },
       "temp_max":{
@@ -536,11 +545,21 @@ const char* _SENSUS_191_7_json = "{\"brand\":\"ALGOL\",\"model\":\"PEMS\",\"mode
          "condition":["manufacturerdata", 30, "!", "ffffffff"],
          "decoder":["value_from_hex_data", "manufacturerdata", 30, 8, true, false],
          "post_proc":["/", 100]
+      },
+      "hum_abs_min":{
+         "condition":["manufacturerdata", 38, "!", "ffff"],
+         "decoder":["value_from_hex_data", "manufacturerdata", 38, 4, true, false],
+         "post_proc":["/", 10]
+      },
+      "hum_abs_max":{
+         "condition":["manufacturerdata", 42, "!", "ffff"],
+         "decoder":["value_from_hex_data", "manufacturerdata", 42, 4, true, false],
+         "post_proc":["/", 10]
       }
    }
 })""""*/
 
-const char* _SENSUS_191_7_json_props = "{\"properties\":{\"temp_min\":{\"unit\":\"°C\",\"name\":\"daily_min_temp\"},\"pres_min\":{\"unit\":\"hPa\",\"name\":\"daily_mim_pres_abs\"},\"hum_min\":{\"unit\":\"%\",\"name\":\"daily_min_hum\"},\"hum_max\":{\"unit\":\"%\",\"name\":\"daily_max_hum\"},\"temp_max\":{\"unit\":\"°C\",\"name\":\"daily_max_temp\"},\"pres_max\":{\"unit\":\"hPa\",\"name\":\"daily_max_pres_abs\"}}}";
+const char* _SENSUS_191_7_json_props = "{\"properties\":{\"temp_min\":{\"unit\":\"°C\",\"name\":\"daily_min_temp\"},\"pres_min\":{\"unit\":\"hPa\",\"name\":\"daily_mim_pres_abs\"},\"hum_min\":{\"unit\":\"%\",\"name\":\"daily_min_hum\"},\"hum_max\":{\"unit\":\"%\",\"name\":\"daily_max_hum\"},\"temp_max\":{\"unit\":\"°C\",\"name\":\"daily_max_temp\"},\"pres_max\":{\"unit\":\"hPa\",\"name\":\"daily_max_pres_abs\"},\"hum_abs_min\":{\"unit\":\"g/m³\",\"name\":\"daily_min_hum_abs\"},\"hum_abs_max\":{\"unit\":\"g/m³\",\"name\":\"daily_max_hum_abs\"}}}";
 /*R""""(
 {
    "properties":{
@@ -567,6 +586,14 @@ const char* _SENSUS_191_7_json_props = "{\"properties\":{\"temp_min\":{\"unit\":
       "pres_max":{
          "unit":"hPa",
          "name":"daily_max_pres_abs"
+      },
+      "hum_abs_min":{
+         "unit":"g/m³",
+         "name":"daily_min_hum_abs"
+      },
+      "hum_abs_max":{
+         "unit":"g/m³",
+         "name":"daily_max_hum_abs"
       }
    }
 })"""";*/
@@ -596,7 +623,7 @@ const char* _SENSUS_191_8_json = "{\"brand\":\"ALGOL\",\"model\":\"PEMS\",\"mode
    }
 })""""*/
 
-const char* _SENSUS_191_8_json_props = "{\"properties\":{\"lux_max\":{\"unit\":\"lx\",\"name\":\"daily_max_illuminance\"},\"uv_index\":{\"unit\":\"\",\"name\":\"daily_max_uv_index\"}}}";
+const char* _SENSUS_191_8_json_props = "{\"properties\":{\"lux_max\":{\"unit\":\"lx\",\"name\":\"daily_max_illuminance\"},\"uv_index_max\":{\"unit\":\"\",\"name\":\"daily_max_uv_index\"}}}";
 /*R""""(
 {
    "properties":{
@@ -604,7 +631,7 @@ const char* _SENSUS_191_8_json_props = "{\"properties\":{\"lux_max\":{\"unit\":\
          "unit":"lx",
          "name":"daily_max_illuminance"
       },
-      "uv_index":{
+      "uv_index_max":{
          "unit":"",
          "name":"daily_max_uv_index"
       }
