@@ -735,7 +735,7 @@ const char* _SENSUS_191_9_json_props = "{\"properties\":{\"tvoc_1h_avg_max\":{\"
 /***************************************************************
  ***  Air Pollution page: averages maximum values in the day ***
  **************************************************************/
-const char* _SENSUS_191_10_json = "{\"brand\":\"ALGOL\",\"model\":\"PEMS\",\"model_id\":\"Sensus191\",\"cidc\":false,\"condition\":[\"manufacturerdata\",\"=\",52,\"index\",0,\"ffff55\",\"&\",\"manufacturerdata\",\"index\",50,\"84\"],\"properties\":{\"fw_version\":{\"condition\":[\"manufacturerdata\",6,\"!\",\"ffffffff\"],\"decoder\":[\"string_from_hex_data\",\"manufacturerdata\",6,8,true,false]},\"hw_version\":{\"condition\":[\"manufacturerdata\",14,\"!\",\"ffffffff\"],\"decoder\":[\"string_from_hex_data\",\"manufacturerdata\",14,8,true,false]},\"pm2_5_24h_avg_max\":{\"condition\":[\"manufacturerdata\",30,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",30,4,true,false]},\"pm10_24h_avg_max\":{\"condition\":[\"manufacturerdata\",38,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",38,4,true,false]}}}";
+const char* _SENSUS_191_10_json = "{\"brand\":\"ALGOL\",\"model\":\"PEMS\",\"model_id\":\"Sensus191\",\"cidc\":false,\"condition\":[\"manufacturerdata\",\"=\",52,\"index\",0,\"ffff55\",\"&\",\"manufacturerdata\",\"index\",50,\"84\"],\"properties\":{\"fw_version\":{\"condition\":[\"manufacturerdata\",6,\"!\",\"ffffffff\"],\"decoder\":[\"string_from_hex_data\",\"manufacturerdata\",6,8,true,false]},\"hw_version\":{\"condition\":[\"manufacturerdata\",14,\"!\",\"ffffffff\"],\"decoder\":[\"string_from_hex_data\",\"manufacturerdata\",14,8,true,false]},\"uptime\":{\"condition\":[\"manufacturerdata\",22,\"!\",\"ffffffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",22,8,true,false]},\"pm2_5_24h_avg_max\":{\"condition\":[\"manufacturerdata\",30,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",30,4,true,false]},\"pm10_24h_avg_max\":{\"condition\":[\"manufacturerdata\",38,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",38,4,true,false]}}}";
 /*R""""(
 {
    "brand":"ALGOL",
@@ -752,6 +752,10 @@ const char* _SENSUS_191_10_json = "{\"brand\":\"ALGOL\",\"model\":\"PEMS\",\"mod
          "condition":["manufacturerdata", 14, "!", "ffffffff"],
          "decoder":["string_from_hex_data", "manufacturerdata", 14, 8, true, false]
       },
+      "uptime":{
+         "condition":["manufacturerdata", 22, "!", "ffffffff"],
+         "decoder":["value_from_hex_data", "manufacturerdata", 22, 8, true, false]
+      },
       "pm2_5_24h_avg_max":{
          "condition":["manufacturerdata", 30, "!", "ffff"],
          "decoder":["value_from_hex_data", "manufacturerdata", 30, 4, true, false]
@@ -763,7 +767,7 @@ const char* _SENSUS_191_10_json = "{\"brand\":\"ALGOL\",\"model\":\"PEMS\",\"mod
    }
 })""""*/
 
-const char* _SENSUS_191_10_json_props = "{\"properties\":{\"fw_version\":{\"unit\":\"\",\"name\":\"fw_version\"},\"hw_version\":{\"unit\":\"\",\"name\":\"hw_version\"},\"pm2_5_24h_avg_max\":{\"unit\":\"µg/m³\",\"name\":\"pm25_avg_max\"},\"pm10_24h_avg_max\":{\"unit\":\"µg/m³\",\"name\":\"pm10_avg_max\"}}}";
+const char* _SENSUS_191_10_json_props = "{\"properties\":{\"fw_version\":{\"unit\":\"\",\"name\":\"fw_version\"},\"hw_version\":{\"unit\":\"\",\"name\":\"hw_version\"},\"uptime\":{\"unit\":\"h\",\"name\":\"uptime\"},\"pm2_5_24h_avg_max\":{\"unit\":\"µg/m³\",\"name\":\"pm25_avg_max\"},\"pm10_24h_avg_max\":{\"unit\":\"µg/m³\",\"name\":\"pm10_avg_max\"}}}";
 /*R""""(
 {
    "properties":{
@@ -774,6 +778,10 @@ const char* _SENSUS_191_10_json_props = "{\"properties\":{\"fw_version\":{\"unit
       "hw_version":{
          "unit":"",
          "name":"hw_version"
+      },
+      "uptime":{
+         "unit":"h",
+         "name":"uptime"
       },
       "pm2_5_24h_avg_max":{
          "unit":"µg/m³",
