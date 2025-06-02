@@ -94,7 +94,7 @@ const char* _SENSUS_191_1_json_props = "{\"properties\":{\"tempc\":{\"unit\":\"Â
 /*************************************************************
  ******        Air Quality page: Instant values         ******
  ************************************************************/
-const char* _SENSUS_191_2_json = "{\"brand\":\"ALGOL\",\"model\":\"PEMS\",\"model_id\":\"Sensus191\",\"cidc\":false,\"condition\":[\"manufacturerdata\",\"=\",52,\"index\",0,\"ffff55\",\"&\",\"manufacturerdata\",\"index\",50,\"02\"],\"properties\":{\"tvoc\":{\"condition\":[\"manufacturerdata\",6,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",6,4,true,false]},\"co2\":{\"condition\":[\"manufacturerdata\",10,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",10,4,true,false]},\"co\":{\"condition\":[\"manufacturerdata\",14,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",14,4,true,false]},\"no2\":{\"condition\":[\"manufacturerdata\",18,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",18,4,true,false]},\"nh3\":{\"condition\":[\"manufacturerdata\",22,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",22,4,true,false]},\"ch2o\":{\"condition\":[\"manufacturerdata\",26,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",26,4,true,false]},\"o3\":{\"condition\":[\"manufacturerdata\",30,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",30,4,true,false]},\"so2\":{\"condition\":[\"manufacturerdata\",34,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",34,4,true,false]},\"c6h6\":{\"condition\":[\"manufacturerdata\",38,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",38,4,true,false]},\"gases_aqi\":{\"condition\":[\"manufacturerdata\",48,\"!\",\"ff\"],\"decoder\":[\"string_from_hex_data\",\"manufacturerdata\",48,2,true,false]}}}";
+const char* _SENSUS_191_2_json = "{\"brand\":\"ALGOL\",\"model\":\"PEMS\",\"model_id\":\"Sensus191\",\"cidc\":false,\"condition\":[\"manufacturerdata\",\"=\",52,\"index\",0,\"ffff55\",\"&\",\"manufacturerdata\",\"index\",50,\"02\"],\"properties\":{\"tvoc\":{\"condition\":[\"manufacturerdata\",6,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",6,4,true,false]},\"co2\":{\"condition\":[\"manufacturerdata\",10,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",10,4,true,false]},\"co\":{\"condition\":[\"manufacturerdata\",14,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",14,4,true,false],\"post_proc\":[\"/\",100]},\"no2\":{\"condition\":[\"manufacturerdata\",18,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",18,4,true,false]},\"nh3\":{\"condition\":[\"manufacturerdata\",22,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",22,4,true,false]},\"ch2o\":{\"condition\":[\"manufacturerdata\",26,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",26,4,true,false]},\"o3\":{\"condition\":[\"manufacturerdata\",30,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",30,4,true,false]},\"so2\":{\"condition\":[\"manufacturerdata\",34,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",34,4,true,false]},\"c6h6\":{\"condition\":[\"manufacturerdata\",38,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",38,4,true,false]},\"gases_aqi\":{\"condition\":[\"manufacturerdata\",48,\"!\",\"ff\"],\"decoder\":[\"string_from_hex_data\",\"manufacturerdata\",48,2,true,false]}}}";
 /*R""""(
 {
    "brand":"ALGOL",
@@ -113,8 +113,9 @@ const char* _SENSUS_191_2_json = "{\"brand\":\"ALGOL\",\"model\":\"PEMS\",\"mode
       },
       "co":{
          "condition":["manufacturerdata", 14, "!", "ffff"],
-         "decoder":["value_from_hex_data", "manufacturerdata", 14, 4, true, false]
-      },
+         "decoder":["value_from_hex_data", "manufacturerdata", 14, 4, true, false],
+         "post_proc":["/", 100]
+     },
       "no2":{
          "condition":["manufacturerdata", 18, "!", "ffff"],
          "decoder":["value_from_hex_data", "manufacturerdata", 18, 4, true, false]
@@ -141,7 +142,7 @@ const char* _SENSUS_191_2_json = "{\"brand\":\"ALGOL\",\"model\":\"PEMS\",\"mode
       },
       "gases_aqi":{
          "condition":["manufacturerdata", 48, "!", "ff"],
-         "decoder":["string_from_hex_data, "manufacturerdata", 48, 2, true, false]
+         "decoder":["string_from_hex_data", "manufacturerdata", 48, 2, true, false]
       }
    }
 })""""*/
@@ -196,7 +197,7 @@ const char* _SENSUS_191_2_json_props = "{\"properties\":{\"tvoc\":{\"unit\":\"pp
 /*************************************************************
  ******        Air Quality page: Average values         ******
  ************************************************************/
-const char* _SENSUS_191_3_json = "{\"brand\":\"ALGOL\",\"model\":\"PEMS\",\"model_id\":\"Sensus191\",\"cidc\":false,\"condition\":[\"manufacturerdata\",\"=\",52,\"index\",0,\"ffff55\",\"&\",\"manufacturerdata\",\"index\",50,\"03\"],\"properties\":{\"tvoc_1h_avg\":{\"condition\":[\"manufacturerdata\",6,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",6,4,true,false]},\"co2_8h_avg\":{\"condition\":[\"manufacturerdata\",10,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",10,4,true,false]},\"co_8h_avg\":{\"condition\":[\"manufacturerdata\",14,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",14,4,true,false]},\"no2_1h_avg\":{\"condition\":[\"manufacturerdata\",18,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",18,4,true,false]},\"nh3_8h_avg\":{\"condition\":[\"manufacturerdata\",22,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",22,4,true,false]},\"ch2o_8h_avg\":{\"condition\":[\"manufacturerdata\",26,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",26,4,true,false]},\"o3_8h_avg\":{\"condition\":[\"manufacturerdata\",30,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",30,4,true,false]},\"so2_1h_avg\":{\"condition\":[\"manufacturerdata\",34,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",34,4,true,false]},\"c6h6_24h_avg\":{\"condition\":[\"manufacturerdata\",38,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",38,4,true,false]},\"gases_t_avg_aqi\":{\"condition\":[\"manufacturerdata\",46,\"!\",\"ff\"],\"decoder\":[\"string_from_hex_data\",\"manufacturerdata\",46,2,true,false]},\"gases_avg_aqi\":{\"condition\":[\"manufacturerdata\",48,\"!\",\"ff\"],\"decoder\":[\"string_from_hex_data\",\"manufacturerdata\",48,2,true,false]}}}";
+const char* _SENSUS_191_3_json = "{\"brand\":\"ALGOL\",\"model\":\"PEMS\",\"model_id\":\"Sensus191\",\"cidc\":false,\"condition\":[\"manufacturerdata\",\"=\",52,\"index\",0,\"ffff55\",\"&\",\"manufacturerdata\",\"index\",50,\"03\"],\"properties\":{\"tvoc_1h_avg\":{\"condition\":[\"manufacturerdata\",6,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",6,4,true,false]},\"co2_8h_avg\":{\"condition\":[\"manufacturerdata\",10,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",10,4,true,false]},\"co_8h_avg\":{\"condition\":[\"manufacturerdata\",14,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",14,4,true,false],\"post_proc\":[\"/\",100]},\"no2_1h_avg\":{\"condition\":[\"manufacturerdata\",18,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",18,4,true,false]},\"nh3_8h_avg\":{\"condition\":[\"manufacturerdata\",22,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",22,4,true,false]},\"ch2o_8h_avg\":{\"condition\":[\"manufacturerdata\",26,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",26,4,true,false]},\"o3_8h_avg\":{\"condition\":[\"manufacturerdata\",30,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",30,4,true,false]},\"so2_1h_avg\":{\"condition\":[\"manufacturerdata\",34,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",34,4,true,false]},\"c6h6_24h_avg\":{\"condition\":[\"manufacturerdata\",38,\"!\",\"ffff\"],\"decoder\":[\"value_from_hex_data\",\"manufacturerdata\",38,4,true,false]},\"gases_t_avg_aqi\":{\"condition\":[\"manufacturerdata\",46,\"!\",\"ff\"],\"decoder\":[\"string_from_hex_data\",\"manufacturerdata\",46,2,true,false]},\"gases_avg_aqi\":{\"condition\":[\"manufacturerdata\",48,\"!\",\"ff\"],\"decoder\":[\"string_from_hex_data\",\"manufacturerdata\",48,2,true,false]}}}";
 /*R""""(
 {
    "brand":"ALGOL",
@@ -215,8 +216,9 @@ const char* _SENSUS_191_3_json = "{\"brand\":\"ALGOL\",\"model\":\"PEMS\",\"mode
       },
       "co_8h_avg":{
          "condition":["manufacturerdata", 14, "!", "ffff"],
-         "decoder":["value_from_hex_data", "manufacturerdata", 14, 4, true, false]
-      },
+         "decoder":["value_from_hex_data", "manufacturerdata", 14, 4, true, false],
+         "post_proc":["/", 100]
+     },
       "no2_1h_avg":{
          "condition":["manufacturerdata", 18, "!", "ffff"],
          "decoder":["value_from_hex_data", "manufacturerdata", 18, 4, true, false]
