@@ -1,12 +1,13 @@
 # Adding decoders
 
-Adding your device protocol to Theengs decoder enable to increase interoperability and to create new use cases with your device. You will find below some guidance to do that. 
+Adding your device protocol to Theengs Decoder enables to increase interoperability and to create new use cases with your device. Below you will find some guidance to do that. 
 
 You can do a pull request directly to the [Repository](https://github.com/theengs/decoder).
 
 # Adding device decoding
 
-Device decode specifications are located in a json file, example [HHCCJCY01HHCC_json.h](../../src/device_json.h). The format is:
+Device decode specifications are located in a json file, example [HHCCJCY01HHCC_json.h](https://github.com/theengs/decoder/blob/development/src/devices/HHCCJCY01HHCC_json.h). The format is:
+
 ```
 R""""(
 {
@@ -41,16 +42,139 @@ Each device must provide a `brand`, `model`, `model_id`, `condition`, and `prope
 - `model` = model name of the device.
 - `model_id` = model id number of the device.
 
-#### Manufacturer ID Compliance
-Whenever a decoder is based on "manufacturerdata" and the first bytes do not comply with the [Bluetooth SIG's company identifier convention](https://www.bluetooth.com/specifications/assigned-numbers/company-identifiers/), an additional device property `"cidc"` should be added to the decoder, set to false.
+### Tag property
+Each device should also have an encoded **tag** property to, at the minimum, define the device type for a decoder, and additionally define other descriptive properties to be published. This enables projects to adjust their display and scanning behaviour accordingly.
+
+<table>
+    <thead>
+        <tr>
+            <th colspan=3>tag encoding</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan=24>Byte[0]</td>
+            <td rowspan=24>Device Type > "type":</td>
+            <td rowspan=1>0 - Reserved</td>
+        </tr>
+        <tr>
+            <td rowspan=1>1 - THB - temperature, humidity, battery</td>
+        </tr>
+        <tr>
+            <td rowspan=1>2 - THBX - temperature, humidity, battery, extras</td>
+        </tr>
+        <tr>
+            <td rowspan=1>3 - BBQ - temperatures with several probes</td>
+        </tr>
+        <tr>
+            <td rowspan=1>4 - CTMO - contact and/or motion sensors</td>
+        </tr>
+        <tr>
+            <td rowspan=1>5 - SCALE - weight scales</td>
+        </tr>
+        <tr>
+            <td rowspan=1>6 - BCON - iBeacon protocol</td>
+        </tr>
+        <tr>
+            <td rowspan=1>7 - ACEL - acceleration</td>
+        </tr>
+        <tr>
+            <td rowspan=1>8 - BATT - battery</td>
+        </tr>
+        <tr>
+            <td rowspan=1>9 - PLANT - plant sensors</td>
+        </tr>
+        <tr>
+            <td rowspan=1>10 - TIRE - tire pressure monitoring system</td>
+        </tr>
+        <tr>
+            <td rowspan=1>11 - BODY - health monitoring devices</td>
+        </tr>
+        <tr>
+            <td rowspan=1>12 - ENRG - energy monitoring devices</td>
+        </tr>
+        <tr>
+            <td rowspan=1>13 - WCVR - window covering devices</td>
+        </tr>
+        <tr>
+            <td rowspan=1>14 - ACTR - ON/OFF actuators</td>
+        </tr>
+        <tr>
+            <td rowspan=1>15 - AIR - air environmental monitoring devices</td>
+        </tr>
+        <tr>
+            <td rowspan=1>16 - TRACK - bluetooth tracker</td>
+        </tr>
+        <tr>
+            <td rowspan=1>17 - BTN - button</td>
+        </tr>
+        <tr>
+            <td rowspan=1>18 - AUDIO - audio devices</td>
+        </tr>
+        <tr>
+            <td rowspan=1>19 - WIND - wind speed anemometers</td>
+        </tr>
+        <tr>
+            <td rowspan=1>20 - ENRG - energy producing, monitoring and storing devices</td>
+        </tr>
+        <tr>
+            <td rowspan=1>20-253 - Reserved for future use</td>
+        </tr>
+        <tr>
+            <td rowspan=1>254 - RMAC - known random MAC address devices</td>
+        </tr>
+        <tr>
+            <td rowspan=1>255 - UNIQ - unique devices</td>
+        </tr>
+		<tr>
+            <td rowspan=8>Byte[1]</td>
+            <td rowspan=8>Additional properties</td>
+            <td rowspan=1>Bits[7-6] - Reserved</td>
+        </tr>
+        <tr>
+            <td rowspan=1>Bit[5] Devices/actuators which are controllable > "ctrl":</td>
+        </tr>
+        <tr>
+        <tr>
+            <td rowspan=1>Bit[4] Potential RMAC device - if not defined with Identity MAC and IRK in Theengs Gateway > "prmac":</td>
+        </tr>
+        <tr>
+            <td rowspan=1>Bit[3] Device discoverable as a device tracker > "track":</td>
+        </tr>
+        <tr>
+            <td rowspan=1>Bit[2] Requires continuous scanning > "cont":</td>
+        </tr>
+        <tr>
+            <td rowspan=1>Bit[1] Requires active scanning > "acts":</td>
+        </tr>
+        <tr>
+            <td rowspan=1>Bit[0] Is NOT Company ID compliant > "cidc":</td>
+        </tr>
+        <tr>
+            <td rowspan=3>Byte[2]</td>
+            <td rowspan=3>Encryption Model > "encr":</td>
+            <td rowspan=1>1 - LYWSD03MMC PVVX</td>
+        </tr>
+        <tr>
+            <td rowspan=1>2 - BTHome v2</td>
+        </tr>
+        <tr>
+            <td rowspan=1>3 - Victron Energy</td>
+        </tr>
+    </tbody>
+</table>
+
+**cidc** - Whenever a decoder is based on "manufacturerdata" and the first bytes do not comply with the [Bluetooth SIG's company identifier convention](https://www.bluetooth.com/specifications/assigned-numbers/company-identifiers/), this should be set to 1/true, to then produce "cidc":false in the published message.
 
 ```
-   "brand":"Govee",
-   "model":"Thermo Hygrometer",
-   "model_id":"H5072",
-   "cidc":false,
+   "brand":"Otio/BeeWi",
+   "model":"Door & Window Sensor",
+   "model_id":"BSDOO",
+   "tag":"0405",
    …
 ```
+
+will have `… "type":"CTMO","cidc":false,"cont":true …` in the published message.
 
 ### Condition
 `condition` is a JSON array, which must contain as the first parameter, the data source to test for the condition. Valid inputs are:
@@ -62,12 +186,18 @@ Whenever a decoder is based on "manufacturerdata" and the first bytes do not com
 The second parameter is variable. If required, further qualification can be made by setting a conditional data length in the case of "servicedata" or "manufacturerdata" as the first condition. This is an operator in the form of `">" , ">=" , "=" , "<" , "<="` followed by the third parameter being a numeric value that specifies the length of the data to accept. If no data length is defined the second parameter must indicate how the data should be tested. Valid inputs are:
 - "contain" tests if the specified value (see below) exists the data source 
 - "index" tests if the specified value exists at the index location (see below) in the data source
+- "mac@index" tests if the device's MAC address exists at the index location (see below) in the data source
+- "revmac@index" tests if the device's MAC address exists octet-reversed at the index location (see below) in the data source
+
+::: warning Note
+For compatibility of a decoder for running successfully on an OS which masks the real MAC addresses of devices by generic uuids, like macOS and iOS, an alternative model condition with the name "conditionnomac" needs to be defined in addition to "condition" if the latter contains "mac@index" or "revmac@index".
+:::
 
 Examples:
 `"condition":["servicedata", "index", 0, "0804"` -- no data length check
 `"condition":["servicedata", ">=", 40, "index", 0, "0804"` -- data length must be equal to or greater than 40 bytes
 
-The third parameter (fifth if data length is specified) can be either the index value or the data value to find. If the second (fourth if data length specified) parameter is `contain`, the next parameter should be the value to look for in the data source. If the second (fourth if data length specified) parameter is `index`, the next parameter should be the location in the data source to look for the value.
+The third parameter (fifth if data length is specified) can be either the index value or the data value to find. If the second (fourth if data length specified) parameter is `contain`, the next parameter should be the value to look for in the data source. If the second (fourth if data length specified) parameter is `index`, `mac@index` or `revmac@index` the next parameter should be the location in the data source to look for the value.
 
 `condition` can have multiple conditions chained together using "|" and "&" between them.  
 For example: `"condition":["servicedata", "index", 0, "0804", "|", "servicedata", "index", 0, "8804"]`  
@@ -91,6 +221,8 @@ making sure the additional AND condition is at the end. This has the same result
 Example: `"condition": ["servicedata", "index", 30, "!", "abcd", "&", "servicedata", "index", 0, "1234"]  
 If the value of the service data at index 30 is not 0xabcd and the data at index 0 is 0x1234, the result is a positive detection.
 
+`condition` "no-mfgdata"; This single argument condition allows to test for the non-existence of manufacturerdata in the received advertising data. 
+
 ### Properties
 Properties is a nested JSON object containing one or more JSON objects. In the example above it looks like:
 ```
@@ -107,8 +239,20 @@ Here we have a single property that defines a value that we want to decode. The 
 `condition` is a JSON array. The first parameter defines the data source of the condition to test and must be one of:
 - "servicedata"
 - "manufacturerdata"
+- "name"
 
-The second parameter is the index of the data source to look for the value. Then the third parameter is the value to test for.
+The second parameter is the index of the data source to look for the value. For a `"name"` comparison the second parameter is either `"contain"` or `"not_contain"`.
+
+Then the third parameter is the value to test for, or in case of the `"name"` comparison the string to compare the device name to.
+
+```
+ "properties":{
+      "hum":{
+         "condition":["name", "not_contain", "GV5108"],
+         "decoder":["value_from_hex_data", "manufacturerdata", 8, 6, false, false],
+         "post_proc":["&", 8388607, "%", 1000, "/", 10]
+      },
+```
 
 If a direct binary bit evaluation encoded in a hex digit is desired the third parameter is `"bit"`, the fourth parameter the bit position from `3-0` and the fifth parameter the bit state `0` or `1`.
 ```
@@ -158,7 +302,7 @@ Property conditions also allow for a NOT comparison, as in
 where then the fourth parameter is the value to test for.
 
 ::: warning Note
-The NOT comparison is case sensitive! Therefor any NOT comparisons should be defined in lower case, as this is the format in which devices' "servicedata" and "manufacturerdata" are being reported.
+The NOT comparison is case sensitive! Therefore any NOT comparisons should be defined in lower case, as this is the format in which devices' "servicedata" and "manufacturerdata" are being reported.
 :::
 
 `decoder` is a JSON array that specifies the decoder function and parameters to decode the value.
@@ -166,6 +310,7 @@ The first parameter is the name of the function to call, The available functions
 - "value_from_hex_data"  - converts the hex string value into an `integer` or `double` type.
 - "bf_value_from_hex_data" - converts the (binary fraction) hex string value into a `double` type.  This should be used when the hex data is represented in the format of `XX.XX`. For example: when `0x1a1e` should output 26.30.
 - "string_from_hex_data" - converts the hex value to a string type.
+- "ascii_from_hex_data" - converts the hex value to ASCII text.
 - "static_value" - sets the value to the static value specified if the condition is met.
 - "bit_static_value" - sets the value to either one of two given values, depending on the evaluated binary bit.
 
@@ -174,7 +319,7 @@ The other parameters for the first three functions are:
 - 24, The index of the data source where the value exists.
 - 4, The length of the data in bytes (characters in the string).
 and additional boolean parameters applicable to the first two functions:
-- true/false, If the value in the data source should have it's endianness reversed before converting.
+- true/false, If the value in the data source should have its endianness reversed before converting.
 - (optional)true/false, Sets if the resulting value can be a negative number. Defaults to true when omitted.
 - (optional)false/true, Sets if the "value_from_hex_data" decoding result is a `float` instead of an `integer` type. Defaults to false when omitted.
 
@@ -199,13 +344,29 @@ Valid operations are:
 - "*" multiply
 - "+" add
 - "-" subtract
+- "±" signed conditional add or subtract
 - "%" modulo
 - "<" shift left
 - ">" shift right
 - "!" Not (invert), useful for bool types
-- "&" Logical And the values
+- "&" Logical AND the values
+- "^" Logical XOR the values
 - "min" the minimum allowed value
 - "max" the maximum allowed value
+- "abs" absolute value
+
+`lookup` This specifies a lookup table for any decoded "string_from_hex_data" string. If the string is defined in the table its related string will be assigned to the property. If no matching hex string is present the property is defined as not decoded. 
+
+```
+ "state":{
+    "decoder":["string_from_hex_data", "manufacturerdata", 10, 2],
+    "lookup":["01", "initialising", 
+              "02", "idle", 
+              "03", "running", 
+              "04", "charging", 
+              "73", "sleeping"]
+ },
+```
 
 #### Special property .cal
 .cal is a special property that can extracted from the provided data and used in calculations of other properties following it's definition. For example:
@@ -223,3 +384,47 @@ Valid operations are:
 ```
 Here the calculation value extracted first from the data stream and used by the next property to calculate the data value.
 
+#### Special property "mac"
+The "mac" property contains a device's MAC address if this is contained in the broadcast service- or manufacturerdata, with either forward or reversed octet order.
+
+In such cases the "mac" property should be included in the decoder, so that these devices can have their proper MAC address assigned on iOS or macOS, which usually masks these with generic uuids.
+
+```
+"properties":{
+      "mac":{
+         "decoder":["mac_from_hex_data", "servicedata", 4]
+      }
+
+      … or
+
+      "mac":{
+         "decoder":["revmac_from_hex_data", "servicedata", 4]
+      }
+
+```
+
+# Checking and fixing your changes
+You can use a script to check whether your raw JSON strings correspond to the escaped string value in the line before. Run the script as:
+
+```
+python scripts/check_decoder.py src/devices/NAMEOFDEVICE.h
+```
+
+You can also install [pre-commit](https://pre-commit.com) to run this check every time you commit a file change:
+
+```
+pip install pre-commit
+pre-commit install
+```
+
+The last command should be run in the root directory of the decoder repository.
+
+If you're using [Visual Studio Code](https://code.visualstudio.com), you can install the [pre-commit extension](https://marketplace.visualstudio.com/items?itemName=elagil.pre-commit-helper). After this, when you have a decoder file open, just open the command palette with Ctrl+Shift+P and choose **pre-commit run (current file)** to check and fix its JSON strings.
+
+Tip: if you just declare a JSON string with an empty string, such as:
+
+```c
+const char* _SBBT_002C_json = "";
+```
+
+Then the script automatically copies the following raw string in the comment to fill the empty string in the previous line, with all double quotes escaped correctly.

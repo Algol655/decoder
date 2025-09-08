@@ -1,22 +1,47 @@
 # Using with Python
 
-## Dependencies
-Building this module it requires scikit-build and cmake, if not already installed you will need to open a terminal and execute:
+## Installing from PyPI
+
+Install the latest stable version from PyPI:
+
+Make sure to have the latest pip
+```
+pip install --upgrade pip
+```
+then
+
+```
+pip install TheengsDecoder
+```
+
+## Installing a development version
+Building this module requires scikit-build and cmake. If not already installed you will need to open a terminal and execute:
 ```
 pip install scikit-build
-apt-get install cmake
+sudo apt-get install cmake
 ```
 
-## Installation
-
-From a terminal cd to `DECODER_FOLDER/python` folder and execute:
+Make sure to have the latest pip
 ```
+pip install --upgrade pip
+```
+
+Then clone the repository and install the latest development version:
+
+```
+git clone --recursive https://github.com/theengs/decoder.git
+cd decoder/python
+cp -r ../src .
 pip install .
 ```
 
 ## Using
 
-`import TheengsDecoder`
+Import the TheengsDecoder in your Python modules as:
+
+```
+import TheengsDecoder
+```
 
 The library includes a BLE decoder [example](https://github.com/theengs/decoder/blob/development/examples/python/ScanAndDecode.py). To run the example, open the folder [ScanAndDecode](https://github.com/theengs/decoder/blob/development/examples/python/ScanAndDecode.py) in a terminal and type 'python ScanAndDecode.py`
 

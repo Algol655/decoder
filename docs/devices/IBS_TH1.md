@@ -1,12 +1,13 @@
 # Inkbird TH1
 
-|Model Id|[IBS_TH1](https://github.com/theengs/decoder/blob/development/src/devices/IBS_TH1_json.h)|
+|Model Id|[IBS-TH1](https://github.com/theengs/decoder/blob/development/src/devices/IBS_THBP01B_json.h)|
 |-|-|
 |Brand|Inkbird|
-|Model|Smart Temperature sensor|
-|Short Description|Temperature and humidity sensor with probe|
+|Model|Thermometer Hygrometer|
+|Short Description|Temperature and humidity sensor (also mini and Plus models) with external probe (not mini)|
 |Communication|BLE broadcast|
 |Frequency|2.4Ghz|
-|Power source|1 AAA|
-|Exchanged data|temperature, humidity, battery|
+|Power Source|1 AAA|
+|Exchanged Data|temperature, humidity, battery|
 |Encrypted|No|
+|Image|![IBS-TH1](./../img/IBS-TH1.png)|

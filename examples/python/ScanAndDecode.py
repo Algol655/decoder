@@ -6,7 +6,7 @@ from TheengsDecoder import decodeBLE as dble
 from TheengsDecoder import getProperties, getAttribute
 
 def detection_callback(device, advertisement_data):
-    print(device.address, "RSSI:", device.rssi, advertisement_data)
+    print(f"{device.address}:{advertisement_data}")
     data_json = {}
 
     if advertisement_data.service_data:
@@ -25,6 +25,8 @@ def detection_callback(device, advertisement_data):
         data_json['name'] = advertisement_data.local_name
 
     if data_json:
+        data_json["id"] = device.address
+        data_json["rssi"] = advertisement_data.rssi
         print("data sent to decoder: ", json.dumps(data_json))
         data_json = dble(json.dumps(data_json))
         print("TheengsDecoder found device:", data_json)

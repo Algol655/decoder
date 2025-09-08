@@ -25,18 +25,15 @@ TheengsDecoder::BLE_ID_NUM test_svcdata_id_num[]{
 const char* test_mfgdata[][3] = {
     {"Inkbird TH1", "sps", "660a03150110805908"},
     {"SHOULD FAIL", "fail", "270201508094c014"},
-    {"SHOULD FAIL", "fail_tpms", "000180eaca10ca8ff46503007c0c00003300"},
 };
 
 TheengsDecoder::BLE_ID_NUM test_mfgdata_id_num[]{
-    TheengsDecoder::BLE_ID_NUM::IBSTH1,
+    TheengsDecoder::BLE_ID_NUM::IBSTHBP01B,
     TheengsDecoder::BLE_ID_NUM::UNKNOWN_MODEL,
-    TheengsDecoder::BLE_ID_NUM::TPMS,
 };
 
 // uuid test input [test name] [uuid] [data source] [data]
 const char* test_uuid[][4] = {
-    {"MiBand", "fee0", "servicedata", "a21e0000"},
     {"ClearGrass clock", "fe95", "servicedata", "70205b04756ab883c8593f090410020001"},
     {"ClearGrass clock", "fe95", "servicedata", "70205b04dc6ab883c8593f09061002b202"},
     {"ClearGrass clock", "fe95", "servicedata", "70205b04756ab883c8593f090410020901"},
@@ -49,7 +46,6 @@ const char* test_uuid[][4] = {
 };
 
 TheengsDecoder::BLE_ID_NUM test_uuid_id_num[]{
-    TheengsDecoder::BLE_ID_NUM::MIBAND,
     TheengsDecoder::BLE_ID_NUM::LYWSD02,
     TheengsDecoder::BLE_ID_NUM::LYWSD02,
     TheengsDecoder::BLE_ID_NUM::LYWSD02,
@@ -58,7 +54,7 @@ TheengsDecoder::BLE_ID_NUM test_uuid_id_num[]{
     TheengsDecoder::BLE_ID_NUM::HHCCJCY01HHCC,
     TheengsDecoder::BLE_ID_NUM::HHCCJCY01HHCC,
     TheengsDecoder::BLE_ID_NUM::UNKNOWN_MODEL,
-    TheengsDecoder::BLE_ID_NUM::XMTZC04HM,
+    TheengsDecoder::BLE_ID_NUM::XMTZC04HMKG,
 };
 int main() {
   StaticJsonDocument<2048> doc;

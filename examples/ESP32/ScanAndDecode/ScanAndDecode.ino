@@ -12,7 +12,7 @@ TheengsDecoder decoder;
 
 StaticJsonDocument<512> doc;
 
-class MyAdvertisedDeviceCallbacks: public NimBLEAdvertisedDeviceCallbacks {
+class scanCallbacks : public NimBLEScanCallbacks {
 
   std::string convertServiceData(std::string deviceServiceData) {
     int serviceDataLength = (int)deviceServiceData.length();
@@ -33,13 +33,11 @@ class MyAdvertisedDeviceCallbacks: public NimBLEAdvertisedDeviceCallbacks {
       BLEdata["name"] = (char*)advertisedDevice->getName().c_str();
 
     if (advertisedDevice->haveManufacturerData()) {
-      char* manufacturerdata = BLEUtils::buildHexData(NULL, (uint8_t*)advertisedDevice->getManufacturerData().data(), advertisedDevice->getManufacturerData().length());
+      std::string manufacturerdata = advertisedDevice->getManufacturerData();
       BLEdata["manufacturerdata"] = manufacturerdata;
-      free(manufacturerdata);
     }
 
-    if (advertisedDevice->haveRSSI())
-      BLEdata["rssi"] = (int)advertisedDevice->getRSSI();
+    BLEdata["rssi"] = (int)advertisedDevice->getRSSI();
 
     if (advertisedDevice->haveTXPower())
       BLEdata["txpower"] = (int8_t)advertisedDevice->getTXPower();
@@ -57,12 +55,18 @@ class MyAdvertisedDeviceCallbacks: public NimBLEAdvertisedDeviceCallbacks {
     if (decoder.decodeBLEJson(BLEdata)) {
       BLEdata.remove("manufacturerdata");
       BLEdata.remove("servicedata");
+      BLEdata.remove("servicedatauuid");
+      BLEdata.remove("type");
+      BLEdata.remove("cidc");
+      BLEdata.remove("acts");
+      BLEdata.remove("cont");
+      BLEdata.remove("track");
       Serial.print("TheengsDecoder found device: ");
       serializeJson(BLEdata, Serial);
       Serial.println("");
     }
   }
-};
+} scanCallbacks;
 
 void setup() {
   Serial.begin(115200);
@@ -73,7 +77,7 @@ void setup() {
 
   pBLEScan = NimBLEDevice::getScan(); //create new scan
   // Set the callback for when devices are discovered, no duplicates.
-  pBLEScan->setAdvertisedDeviceCallbacks(new MyAdvertisedDeviceCallbacks(), false);
+  pBLEScan->setScanCallbacks(&scanCallbacks, false);
   pBLEScan->setActiveScan(true); // Set active scanning, this will get more data from the advertiser.
   pBLEScan->setInterval(97); // How often the scan occurs / switches channels; in milliseconds,
   pBLEScan->setWindow(37);  // How long to scan during the interval; in milliseconds.
@@ -84,7 +88,7 @@ void loop() {
   // If an error occurs that stops the scan, it will be restarted here.
   if(pBLEScan->isScanning() == false) {
       // Start scan with: duration = 0 seconds(forever), no scan end callback, not a continuation of a previous scan.
-      pBLEScan->start(0, nullptr, false);
+      pBLEScan->start(0, false, false);
   }
 
   delay(2000);

@@ -23,9 +23,6 @@ static PyObject *decode_BLE(PyObject *self, PyObject *args)
 
     if (decoder.decodeBLEJson(bleObject) >= 0) {
       std::string buf;
-      bleObject.remove("servicedata");
-      bleObject.remove("manufacturerdata");
-      bleObject.remove("servicedatauuid");
       serializeJson(bleObject, buf);
       return Py_BuildValue("s", buf.c_str());
     }
