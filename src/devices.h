@@ -36,6 +36,7 @@
 #include "devices/H5074_json.h"
 #include "devices/H5102_json.h"
 #include "devices/H5106_json.h"
+#include "devices/H5140_json.h"
 #include "devices/H5179_json.h"
 #include "devices/HHCCJCY10_json.h"
 #include "devices/HHCCJCY01HHCC_json.h"
@@ -78,6 +79,7 @@
 #include "devices/Skale_json.h"
 #include "devices/SmartDry_json.h"
 #include "devices/TPMS_json.h"
+#include "devices/TPMSBR_json.h"
 #include "devices/KKM_K6P_json.h"
 #include "devices/KKM_K9_json.h"
 #include "devices/ThermoBeacon_json.h"
@@ -103,6 +105,7 @@
 #include "devices/BM3IN1_json.h"
 #include "devices/BM4IN1_json.h"
 #include "devices/BPARASITE_json.h"
+#include "devices/BPARASITEV2_json.h"
 #include "devices/BWBSDOO_json.h"
 #include "devices/BM2_json.h"
 #include "devices/BM6_json.h"
@@ -118,12 +121,11 @@
 #include "devices/SensorP_HT_json.h"
 #include "devices/ServiceData_json.h"
 #include "devices/UT363BT_json.h"
-#include "devices/VICTRON_BSC_ENCR_json.h"
+#include "devices/VICTRON__ENCR_json.h"
 #include "devices/VICTRON_BSC_json.h"
-#include "devices/VICTRON_ORIONXS_ENCR_json.h"
 #include "devices/VICTRON_ORIONXS_json.h"
-#include "devices/VICTRON_SBP_ENCR_json.h"
 #include "devices/VICTRON_SBP_json.h"
+#include "devices/VICTRON_SBS_json.h"
 #include "devices/SE_RHT_json.h"
 #include "devices/SE_TEMP_json.h"
 #include "devices/SE_TPROBE_json.h"
@@ -138,7 +140,6 @@
 #include "devices/SBHT_003C_json.h"
 #include "devices/SBHT_003C_ENCR_json.h"
 #include "devices/VCH6003_json.h"
-#include "devices/SENSUS_191_json.h"
 
 
 const char* _devices[][2] = {
@@ -171,6 +172,7 @@ const char* _devices[][2] = {
     {_XMTZC05HMKG_json, _XMTZC05HMKG_json_props},
     {_XMTZC05HMLB_json, _XMTZC05HMLB_json_props},
     {_TPMS_json, _TPMS_json_props},
+    {_TPMSBR_json, _TPMSBR_json_props},
     {_KKM_K6P_json, _KKM_K6P_json_props},
     {_KKM_K9_json, _KKM_K9_json_props},
     {_LYWSD03MMC_json_ATC, _LYWSD03MMC_json_props},
@@ -187,7 +189,9 @@ const char* _devices[][2] = {
     {_H5074_json, _H5074_json_props},
     {_H5102_json, _H5102_json_props},
     {_H5106_json, _H5106_json_props},
+    {_H5140_json, _H5140_json_props},
     {_H5179_json, _H5179_json_props},
+    {_H5179_json_N, _H5179_json_props},
     {_HHCCJCY10_json, _HHCCJCY10_json_props},
     {_MUE4094RT_json, _MUE4094RT_json_props},
     {_NODONNIU_json, _NODONNIU_json_props},
@@ -224,6 +228,7 @@ const char* _devices[][2] = {
     {_HHCCPOT002_json, _HHCCPOT002_json_props},
     {_HOBOMX2001_json, _HOBOMX2001_json_props},
     {_BPARASITE_json, _BPARASITE_json_props},
+    {_BPARASITEV2_json, _BPARASITEV2_json_props},
     {_BWBSDOO_json, _BWBSDOO_json_props},
     {_BM2_json, _BM2_json_props},
     {_BM6_json, _BM6_json_props},
@@ -267,12 +272,11 @@ const char* _devices[][2] = {
     {_SensorPush_HT_json, _SensorPush_HT_json_props},
     {_ServiceData_json, _ServiceData_json_props},
     {_UT363BT_json, _UT363BT_json_props},
-    {_VICTBSC_ENCR_json, _VICTBSC_ENCR_json_props},
+    {_VICTRON_ENCR_json, _VICTRON_ENCR_json_props},
     {_VICTBSC_json, _VICTBSC_json_props},
-    {_VICTORIONXS_ENCR_json, _VICTORIONXS_ENCR_json_props},
     {_VICTORIONXS_json, _VICTORIONXS_json_props},
-    {_VICTSBP_ENCR_json, _VICTSBP_ENCR_json_props},
     {_VICTSBP_json, _VICTSBP_json_props},
+    {_VICTSBS_json, _VICTSBS_json_props},
     {_SE_RHT_json, _SE_RHT_json_props},
     {_SE_TEMP_json, _SE_TEMP_json_props},
     {_SE_TPROBE_json, _SE_TPROBE_json_props},

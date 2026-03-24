@@ -75,6 +75,7 @@ public:
     XMTZC05HMKG,
     XMTZC05HMLB,
     TPMS,
+    TPMSBR,
     KKM_K6P,
     KKM_K9,
     LYWSD03MMC_ATC,
@@ -91,7 +92,9 @@ public:
     H5074,
     H5102,
     H5106,
+    H5140,
     H5179,
+    H5179_N,
     HHCCJCY10,
     MUE4094RT,
     NODONNIU,
@@ -128,6 +131,7 @@ public:
     HHCCPOT002,
     HOBOMX2001,
     BPARASITE,
+    BPARASITEV2,
     BWBSDOO,
     BM2,
     BM6,
@@ -171,12 +175,11 @@ public:
     SPHT,
     SERVICE_DATA,
     UT363BT,
-    VICTBSC_ENCR,
+    VICTRON_ENCR,
     VICTBSC,
-    VICTORIONXS_ENCR,
     VICTORIONXS,
-    VICTSBP_ENCR,
     VICTSBP,
+    VICTSBS,
     SE_RHT,
     SE_TEMP,
     SE_TPROBE,
@@ -217,7 +220,7 @@ private:
                                const char* dev_name, const char* svc_uuid, const char* mac_id);
   std::string sanitizeJsonKey(const char* key_in);
 
-  size_t m_docMax = 12200;
+  size_t m_docMax = 11800;
   size_t m_minSvcDataLen = 4;
   size_t m_minMfgDataLen = 10;
 };
